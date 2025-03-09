@@ -1,43 +1,43 @@
-const dispaly = document.getElementById("Display");
-let timer = null;
+const display = document.getElementById("Display");
+
 let startTime = 0;
-let elaspsedtime = 0;
-let isrunning = false;
+let timer = null;
+let timecal = 0;
+let isRunning = false;
 
 function start() {
-  if (!isrunning) {
-    startTime = Date.now() - elaspsedtime;
+  if (!isRunning) {
+    startTime = Date.now() - timecal;
     timer = setInterval(update, 10);
-    isrunning = true;
+    isRunning = true;
   }
 }
 function stop() {
-  if (isrunning) {
+  if (isRunning) {
     clearInterval(timer);
-    elaspsedtime = Date.now() - startTime;
-    isrunning = false;
+    timecal = Date.now() - startTime;
+    isRunning = false;
   }
 }
 function reset() {
   clearInterval(timer);
-  timer = null;
   startTime = 0;
-  elaspsedtime = 0;
-  isrunning = false;
-  dispaly.innerText = "00:00:00:00";
+  timecal = 0;
+  isRunning = false;
+  timer = null;
+  display.innerText = "00:00:00:00";
 }
-
 function update() {
-  const currenttime = Date.now();
-  elaspsedtime = currenttime - startTime;
+  const currentTime = Date.now();
 
-  let hours = Math.floor(elaspsedtime / (1000 * 60 * 60));
-  let minutes = Math.floor(elaspsedtime / (1000 * 60) / 60);
-  let seconds = Math.floor((elaspsedtime / 1000) % 60);
-  let milliseconds = Math.floor((elaspsedtime % 1000) / 10);
+  timecal = currentTime - startTime;
+  let hours = Math.floor(timecal / (1000 * 60 * 60));
+  let minutes = Math.floor(timecal / (1000 * 60));
+  let seconds = Math.floor((timecal / 1000) % 60);
+  let milliseconds = Math.floor(timecal % 60);
   hours = hours.toString().padStart(2, 0);
   minutes = minutes.toString().padStart(2, 0);
   seconds = seconds.toString().padStart(2, 0);
   milliseconds = milliseconds.toString().padStart(2, 0);
-  dispaly.innerText = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+  display.innerText = `${hours}:${minutes}:${seconds}:${milliseconds}`;
 }
