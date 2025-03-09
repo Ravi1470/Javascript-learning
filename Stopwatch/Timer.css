@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+body {
+
+    display: flex;
+    background: gray;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 4rem;
+}
+
+#Display {
+    font-size: 6rem;
+    border: 5px black solid;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 350px;
+
+}
+
+#Stopbtn {
+    font-size: 1rem;
+    width: 70px;
+    padding: 13px;
+    border: none;
+    background-color: rgb(255, 54, 54);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#Startbtn {
+    font-size: 1rem;
+    width: 70px;
+    padding: 13px;
+    border: none;
+    background-color: rgb(34, 228, 115);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#Resetbtn {
+    font-size: 1rem;
+    width: 70px;
+    padding: 13px;
+    border: none;
+    background-color: rgb(230, 58, 24);
+    border-radius: 7px;
+    cursor: pointer;
+}
